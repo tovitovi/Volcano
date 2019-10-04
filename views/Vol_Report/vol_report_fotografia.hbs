@@ -1,0 +1,59 @@
+<div class="sidenav">
+  <form action="/vol-report-fotografia" method="POST">
+    <h5 class="text-center">2019</h5>
+    <button class="btn text-left btn-block" name="Octubre" type="submit">
+      <p>Octubre</p>
+    </button>
+    <button class="btn text-left btn-block" name="Noviembre" type="submit">
+      <p>Noviembre</p>
+    </button>
+    <button class="btn text-left btn-block" name="Diciembre" type="submit">
+      <p>Diciembre</p>
+    </button>
+    <h5 class="text-center">2020</h5>
+    <button class="btn text-left btn-block" name="Enero" type="submit">
+      <p>Enero</p>
+    </button>
+  </form>
+  
+</div>
+
+<main class="main">
+
+  <div class="row">
+
+    <!-- Button to Open the Modal -->
+    {{#each images}}
+    <div class="col-md-4 mb-3">
+      <div class="card text-center">
+        <img id="myModal{{_id}}" class="myImg card-img-top" src="/public/uploads/{{filename}}" alt="{{description}}"
+          onClick="displayModal(myModal{{_id}})">
+
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{#if description}}{{description}}{{else}}<br>{{/if}}</p>
+        </div>
+        <div class="card-footer text-muted">
+          {{created_at}}
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="modal_image" alt="modal image 1 " src="/public/uploads/{{filename}}">
+
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
+        </div>
+
+      </div>
+
+    </div>
+    {{/each}}
+  </div>
+
+</main>

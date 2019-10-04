@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+
+/* Trick: */
+
+body {
+    position: relative;
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 70px;
+    /* Set same as footer's height */
+}
+
+.main {
+    margin-left: 50px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    /* Set the fixed height of the footer here */
+    background-color: #000000;
+}
+
+#logo:hover {
+    opacity: 0.7;
+}
+
+li {
+    font-family: Century Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+#separador1 {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+#header_nav {
+    font-family: Century Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    float: right;
+    word-spacing: 4em;
+    font-size: 1.5em;
+    padding: 0.4em;
+}
+
+nav a {
+    color: #000000;
+}
+
+nav a:hover {
+    color: #808080
+}
+
+header img {
+    margin-top: 0.5em;
+}
+
+#container_vol_report {
+    position: absolute;
+    display: inline-block;
+    left: 402px;
+    opacity: 1;
+}
+
+#container_vol_res {
+    position: absolute;
+    display: inline-block;
+    opacity: 1;
+    left: 202px;
+}
+
+#container_vol_media {
+    position: absolute;
+    display: inline-block;
+    opacity: 1;
+    left: 202px;
+}
+
+#container_vol_data {
+    position: absolute;
+    display: inline-block;
+    opacity: 1;
+    left: 402px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #BFBFBF;
+}
+
+.container_menu {
+    display: block;
+    position: relative;
+    left: 202px;
+    z-index: 100;
+}
+
+.container_menu2 {
+    display: block;
+    position: relative;
+    left: 202px;
+    z-index: 100;
+}
+
+.main_row1 {
+    position: relative;
+    display: block;
+}
+
+.main_row2 {
+    position: relative;
+    display: block;
+}
+
+.main_page {
+    width: 804px;
+}
+
+#vol_research,
+#vol_report,
+#vol_media,
+#vol_data,
+#container_vol_report,
+#container_vol_media,
+#container_vol_data,
+#container_vol_res {
+    box-shadow: 2px 2px 2px grey;
+}

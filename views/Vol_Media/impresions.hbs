@@ -1,0 +1,32 @@
+<main class="main">
+    <h3 class="text-center">Selecciona un Evento</h3>
+
+    <form action="/impresions" method="POST">
+        <div class="row">
+            {{#each pdfTag}}
+            <div class="col-md-4 mb-5">
+                <div class="card text-center">
+                    <button class="btn btn-outline-light shadow-sm" name="{{this}}" style="color:black;"
+                        type="submit">{{this}}</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </form>
+    <div class="row">
+        {{#each pdf}}
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <object height="300" data="/public/{{path}}"></object>
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{#if description}}{{description}}{{else}}<br>{{/if}}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    {{created_at}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</main>

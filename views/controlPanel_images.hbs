@@ -1,0 +1,64 @@
+<div class="card">
+
+  <div class="card-header bg-dark">
+    <h3 class="card-title text-white">
+      Upload an Image
+    </h3>
+  </div>
+
+  <div class="card-body">
+    <form action="/controlpanel/images" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" name="image" class="custom-file-input" id="inputGroup" aria-describedby="inputGroupFileAddon">
+            <label class="custom-file-label" for="inputGroupFile">Choose File</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" name="title" class="form-control" placeholder="Title for the image" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="client" class="form-control" placeholder="User" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="date" class="form-control" placeholder="Month" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="tag" class="form-control" placeholder="Tag" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="evento" class="form-control" placeholder="Evento" required>
+      </div>
+      <div class="form-group">
+        <textarea name="description" rows="2" class="form-control" placeholder="Description for image"></textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success">
+          Upload Image
+        </button>
+      </div>
+
+
+
+    </form>
+  </div>
+</div>
+
+<div class="card mt-2">
+  <div class="card-header bg-dark text-white">
+    <h3>Recent Uploads</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      {{#each images}}
+        <div class="col-md-4">
+          <a href="/images/">
+          <img src="/public/uploads/{{filename}}" alt="" class="w-100 h-100 img-thumbnail">
+          </a>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
